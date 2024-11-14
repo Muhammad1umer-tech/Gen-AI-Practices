@@ -124,12 +124,18 @@ def DocumentWriterTool(datas:  List[Dict[str, str]]) -> str:
         doc.save("Document.docx")
         
         print("\nEnd of DocumentWriter:")
-        return "Successfully saved the documents"
+        return {
+            "response": "Successfully saved the documents",
+            "status": 200
+        }
 
     except Exception as e:
         error_message = f"An error occurred while saving the documents: {e}"
         print(error_message)
-        return error_message
+        return {
+            "response": "Not successfully saved",
+            "status": 500
+        }
 
 # print(InsightResearcher({
 #     "datas": InternetSearchTool("Web scrapping")
