@@ -1,6 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import JsonOutputParser
 from langgraph.prebuilt import ToolNode, tools_condition
+from langchain.agents import initialize_agent, Tool
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
@@ -20,7 +21,7 @@ from tools import  InternetSearchTool, InsightResearcher, DocumentWriterTool
 
 # InternetSearchAnalyst (go thru different urls and create summary and give to InsightRearcher)
 # InsightResearcher (indept search on each topic and will give use detailed report)
-# duckduckgo search and beautiful soup
+# duckduckgo search and beautiful soupP
 #Tools (search the internet, and read) duckduckgo_search, beautiful soup
 
 load_dotenv()
